@@ -1,0 +1,453 @@
+category_code,price_band,carted_sessions,abandoned_sessions,revenue_at_risk
+accessories.bag,1. under 100,3748,2550,90403.0
+accessories.bag,2. 100-250,447,314,38072.0
+accessories.bag,3. 250-500,64,53,18709.0
+accessories.bag,4. 500-1000,18,15,8466.0
+accessories.bag,5. 1000+,1,1,1465.0
+accessories.umbrella,1. under 100,55,39,817.0
+accessories.wallet,1. under 100,771,521,24999.0
+accessories.wallet,2. 100-250,31,28,3728.0
+accessories.wallet,3. 250-500,4,4,1228.0
+apparel.belt,1. under 100,93,62,1929.0
+apparel.costume,1. under 100,1508,1036,66012.0
+apparel.costume,2. 100-250,471,338,51017.0
+apparel.costume,3. 250-500,74,56,20059.0
+apparel.costume,4. 500-1000,11,9,4707.0
+apparel.dress,1. under 100,345,269,12152.0
+apparel.dress,2. 100-250,11,10,1164.0
+apparel.dress,3. 250-500,1,1,350.0
+apparel.dress,4. 500-1000,3,3,2015.0
+apparel.glove,1. under 100,46,36,1911.0
+apparel.jeans,1. under 100,503,377,13595.0
+apparel.jeans,2. 100-250,1,1,196.0
+apparel.jumper,1. under 100,237,173,4242.0
+apparel.jumper,2. 100-250,1,1,148.0
+apparel.jumper,3. 250-500,1,1,373.0
+apparel.scarf,1. under 100,37,31,730.0
+apparel.shirt,1. under 100,335,256,10097.0
+apparel.shirt,2. 100-250,62,49,5387.0
+apparel.shirt,3. 250-500,1,1,366.0
+apparel.shoes,1. under 100,17877,12303,948562.0
+apparel.shoes,2. 100-250,6338,4593,568286.0
+apparel.shoes,3. 250-500,63,44,13410.0
+apparel.shoes,4. 500-1000,4,3,1578.0
+apparel.shoes.ballet_shoes,1. under 100,48,31,974.0
+apparel.shoes.espadrilles,1. under 100,6,6,136.0
+apparel.shoes.keds,1. under 100,4132,2872,178644.0
+apparel.shoes.keds,2. 100-250,1018,718,90019.0
+apparel.shoes.keds,3. 250-500,8,6,1641.0
+apparel.shoes.moccasins,1. under 100,56,44,2269.0
+apparel.shoes.moccasins,2. 100-250,30,25,2510.0
+apparel.shoes.sandals,1. under 100,118,83,2591.0
+apparel.shoes.slipons,1. under 100,35,32,1498.0
+apparel.shoes.step_ins,1. under 100,16,11,343.0
+apparel.shorts,1. under 100,8,6,39.0
+apparel.skirt,1. under 100,51,42,1262.0
+apparel.skirt,3. 250-500,1,1,324.0
+apparel.sock,1. under 100,48,37,1245.0
+apparel.sock,2. 100-250,1,0,0.0
+apparel.sock,4. 500-1000,1,1,525.0
+apparel.trousers,1. under 100,179,135,6546.0
+apparel.trousers,2. 100-250,4,3,417.0
+apparel.trousers,3. 250-500,1,1,358.0
+apparel.tshirt,1. under 100,233,175,3777.0
+apparel.underwear,1. under 100,359,301,6032.0
+appliances.environment.air_conditioner,1. under 100,4,4,23.0
+appliances.environment.air_conditioner,2. 100-250,788,587,122669.0
+appliances.environment.air_conditioner,3. 250-500,824,612,212238.0
+appliances.environment.air_conditioner,4. 500-1000,251,128,95606.0
+appliances.environment.air_conditioner,5. 1000+,64,37,49095.0
+appliances.environment.air_heater,1. under 100,7115,4433,171567.0
+appliances.environment.air_heater,2. 100-250,558,358,51571.0
+appliances.environment.air_heater,3. 250-500,97,53,17271.0
+appliances.environment.air_heater,4. 500-1000,7,5,3475.0
+appliances.environment.air_heater,5. 1000+,3,2,2589.0
+appliances.environment.fan,1. under 100,53,32,692.0
+appliances.environment.fan,2. 100-250,4,4,571.0
+appliances.environment.vacuum,1. under 100,13205,7764,513462.0
+appliances.environment.vacuum,2. 100-250,19058,12296,1797338.0
+appliances.environment.vacuum,3. 250-500,6978,4910,1799562.0
+appliances.environment.vacuum,4. 500-1000,581,413,276124.0
+appliances.environment.vacuum,5. 1000+,19,19,22936.0
+appliances.environment.water_heater,1. under 100,2535,1646,117859.0
+appliances.environment.water_heater,2. 100-250,4419,2709,332458.0
+appliances.environment.water_heater,3. 250-500,62,48,14620.0
+appliances.environment.water_heater,4. 500-1000,12,9,5235.0
+appliances.iron,1. under 100,7494,4569,192557.0
+appliances.iron,2. 100-250,1304,864,113673.0
+appliances.iron,3. 250-500,469,289,98560.0
+appliances.iron,4. 500-1000,70,49,31127.0
+appliances.iron,5. 1000+,28,20,40948.0
+appliances.ironing_board,1. under 100,1821,1181,41094.0
+appliances.ironing_board,2. 100-250,113,79,10080.0
+appliances.ironing_board,3. 250-500,11,5,1737.0
+appliances.kitchen.blender,1. under 100,7402,4758,229947.0
+appliances.kitchen.blender,2. 100-250,1628,1121,159566.0
+appliances.kitchen.blender,3. 250-500,14,11,3856.0
+appliances.kitchen.blender,4. 500-1000,3,3,1853.0
+appliances.kitchen.coffee_grinder,1. under 100,390,274,8572.0
+appliances.kitchen.coffee_grinder,2. 100-250,1,1,206.0
+appliances.kitchen.coffee_machine,1. under 100,716,526,23771.0
+appliances.kitchen.coffee_machine,2. 100-250,549,390,67709.0
+appliances.kitchen.coffee_machine,3. 250-500,124,83,28156.0
+appliances.kitchen.coffee_machine,4. 500-1000,253,174,128254.0
+appliances.kitchen.coffee_machine,5. 1000+,127,93,137222.0
+appliances.kitchen.dishwasher,3. 250-500,1855,1298,449736.0
+appliances.kitchen.dishwasher,4. 500-1000,718,509,294607.0
+appliances.kitchen.dishwasher,5. 1000+,6,6,8858.0
+appliances.kitchen.fryer,1. under 100,3,2,93.0
+appliances.kitchen.grill,1. under 100,763,498,33768.0
+appliances.kitchen.grill,2. 100-250,844,558,86799.0
+appliances.kitchen.grill,3. 250-500,897,632,228818.0
+appliances.kitchen.grill,4. 500-1000,24,12,8561.0
+appliances.kitchen.grill,5. 1000+,4,4,4066.0
+appliances.kitchen.hob,1. under 100,254,177,14570.0
+appliances.kitchen.hob,2. 100-250,2189,1542,264731.0
+appliances.kitchen.hob,3. 250-500,1206,871,285903.0
+appliances.kitchen.hob,4. 500-1000,99,75,47193.0
+appliances.kitchen.hob,5. 1000+,9,4,4376.0
+appliances.kitchen.hood,1. under 100,1768,1203,73458.0
+appliances.kitchen.hood,2. 100-250,1847,1289,188022.0
+appliances.kitchen.hood,3. 250-500,232,166,54456.0
+appliances.kitchen.hood,4. 500-1000,16,13,8678.0
+appliances.kitchen.hood,5. 1000+,6,4,6265.0
+appliances.kitchen.juicer,1. under 100,707,427,23138.0
+appliances.kitchen.juicer,2. 100-250,871,588,83290.0
+appliances.kitchen.juicer,3. 250-500,75,51,15110.0
+appliances.kitchen.juicer,4. 500-1000,10,6,3926.0
+appliances.kitchen.kettle,1. under 100,7437,4829,150664.0
+appliances.kitchen.kettle,2. 100-250,334,216,29190.0
+appliances.kitchen.kettle,3. 250-500,18,14,3789.0
+appliances.kitchen.meat_grinder,1. under 100,3676,2405,139110.0
+appliances.kitchen.meat_grinder,2. 100-250,2844,1818,262857.0
+appliances.kitchen.meat_grinder,3. 250-500,205,143,39991.0
+appliances.kitchen.microwave,1. under 100,6004,3488,220598.0
+appliances.kitchen.microwave,2. 100-250,4002,2500,312270.0
+appliances.kitchen.microwave,3. 250-500,156,108,32946.0
+appliances.kitchen.microwave,4. 500-1000,20,15,9056.0
+appliances.kitchen.microwave,5. 1000+,8,7,9231.0
+appliances.kitchen.mixer,1. under 100,2833,1778,63148.0
+appliances.kitchen.mixer,2. 100-250,724,498,60547.0
+appliances.kitchen.mixer,3. 250-500,37,23,6566.0
+appliances.kitchen.mixer,4. 500-1000,120,86,52415.0
+appliances.kitchen.mixer,5. 1000+,5,4,4741.0
+appliances.kitchen.oven,1. under 100,4900,3171,168511.0
+appliances.kitchen.oven,2. 100-250,1307,898,151230.0
+appliances.kitchen.oven,3. 250-500,2022,1439,503846.0
+appliances.kitchen.oven,4. 500-1000,198,137,90307.0
+appliances.kitchen.oven,5. 1000+,19,11,16616.0
+appliances.kitchen.refrigerators,1. under 100,119,79,6885.0
+appliances.kitchen.refrigerators,2. 100-250,10659,7152,1481435.0
+appliances.kitchen.refrigerators,3. 250-500,13766,9520,3234531.0
+appliances.kitchen.refrigerators,4. 500-1000,5621,3996,2570678.0
+appliances.kitchen.refrigerators,5. 1000+,957,685,899541.0
+appliances.kitchen.steam_cooker,1. under 100,253,130,9310.0
+appliances.kitchen.steam_cooker,2. 100-250,137,92,10397.0
+appliances.kitchen.steam_cooker,3. 250-500,1,1,253.0
+appliances.kitchen.steam_cooker,5. 1000+,4,3,5058.0
+appliances.kitchen.toster,1. under 100,1109,733,27001.0
+appliances.kitchen.toster,2. 100-250,59,29,4116.0
+appliances.kitchen.toster,3. 250-500,4,2,726.0
+appliances.kitchen.toster,4. 500-1000,2,2,1132.0
+appliances.kitchen.washer,1. under 100,2406,1451,134022.0
+appliances.kitchen.washer,2. 100-250,12176,7495,1338419.0
+appliances.kitchen.washer,3. 250-500,22910,14956,5431569.0
+appliances.kitchen.washer,4. 500-1000,2050,1372,825845.0
+appliances.kitchen.washer,5. 1000+,142,105,145845.0
+appliances.personal.hair_cutter,1. under 100,2208,1380,48756.0
+appliances.personal.hair_cutter,2. 100-250,150,101,12779.0
+appliances.personal.hair_cutter,3. 250-500,5,3,751.0
+appliances.personal.massager,1. under 100,720,473,13921.0
+appliances.personal.massager,2. 100-250,70,45,5863.0
+appliances.personal.massager,3. 250-500,9,6,2376.0
+appliances.personal.massager,4. 500-1000,206,116,73155.0
+appliances.personal.scales,1. under 100,3217,2068,38907.0
+appliances.personal.scales,2. 100-250,12,9,1687.0
+appliances.sewing_machine,1. under 100,1324,866,75063.0
+appliances.sewing_machine,2. 100-250,4676,3124,471440.0
+appliances.sewing_machine,3. 250-500,428,298,100354.0
+appliances.sewing_machine,4. 500-1000,120,87,54061.0
+appliances.sewing_machine,5. 1000+,313,211,277408.0
+auto.accessories.alarm,1. under 100,1140,746,62589.0
+auto.accessories.alarm,2. 100-250,6198,3991,567779.0
+auto.accessories.alarm,3. 250-500,285,196,65629.0
+auto.accessories.alarm,4. 500-1000,36,29,22246.0
+auto.accessories.anti_freeze,1. under 100,71,56,1170.0
+auto.accessories.compressor,1. under 100,825,574,26443.0
+auto.accessories.compressor,2. 100-250,537,343,48307.0
+auto.accessories.compressor,3. 250-500,241,163,62267.0
+auto.accessories.compressor,4. 500-1000,14,10,6923.0
+auto.accessories.parktronic,1. under 100,176,126,5774.0
+auto.accessories.parktronic,2. 100-250,24,19,2348.0
+auto.accessories.player,1. under 100,3456,2237,132853.0
+auto.accessories.player,2. 100-250,3716,2405,369524.0
+auto.accessories.player,3. 250-500,762,541,169876.0
+auto.accessories.player,4. 500-1000,83,52,32727.0
+auto.accessories.radar,1. under 100,1085,713,51994.0
+auto.accessories.radar,2. 100-250,240,155,18558.0
+auto.accessories.radar,3. 250-500,3,3,1214.0
+auto.accessories.videoregister,1. under 100,2322,1584,94526.0
+auto.accessories.videoregister,2. 100-250,3296,2203,337760.0
+auto.accessories.videoregister,3. 250-500,175,131,41986.0
+auto.accessories.videoregister,4. 500-1000,7,5,3177.0
+auto.accessories.winch,3. 250-500,24,13,6031.0
+auto.accessories.winch,4. 500-1000,13,10,6043.0
+computers.components.cooler,1. under 100,1470,1039,45397.0
+computers.components.cooler,2. 100-250,112,74,10166.0
+computers.components.cpu,1. under 100,159,129,10110.0
+computers.components.cpu,2. 100-250,1022,762,132672.0
+computers.components.cpu,3. 250-500,314,248,88378.0
+computers.components.cpu,4. 500-1000,89,68,39295.0
+computers.components.cpu,5. 1000+,4,4,5249.0
+computers.components.hdd,1. under 100,3013,1982,98383.0
+computers.components.hdd,2. 100-250,508,358,51288.0
+computers.components.hdd,3. 250-500,59,45,15381.0
+computers.components.hdd,4. 500-1000,7,5,3517.0
+computers.components.memory,1. under 100,1912,1329,59486.0
+computers.components.memory,2. 100-250,248,168,22193.0
+computers.components.memory,3. 250-500,10,3,958.0
+computers.components.memory,4. 500-1000,1,1,960.0
+computers.components.motherboard,1. under 100,636,454,33252.0
+computers.components.motherboard,2. 100-250,463,338,48001.0
+computers.components.motherboard,3. 250-500,96,65,20595.0
+computers.components.motherboard,4. 500-1000,8,6,4355.0
+computers.components.power_supply,1. under 100,734,505,23821.0
+computers.components.power_supply,2. 100-250,114,78,10634.0
+computers.components.power_supply,3. 250-500,5,3,941.0
+computers.components.videocards,1. under 100,98,77,5307.0
+computers.components.videocards,2. 100-250,1551,1125,200228.0
+computers.components.videocards,3. 250-500,1151,862,297614.0
+computers.components.videocards,4. 500-1000,421,324,217155.0
+computers.components.videocards,5. 1000+,36,32,47720.0
+computers.desktop,1. under 100,2623,1725,87721.0
+computers.desktop,2. 100-250,1437,971,153723.0
+computers.desktop,3. 250-500,1139,787,286174.0
+computers.desktop,4. 500-1000,2902,2114,1512986.0
+computers.desktop,5. 1000+,791,583,898014.0
+computers.ebooks,1. under 100,63,48,4137.0
+computers.ebooks,2. 100-250,1047,739,107581.0
+computers.ebooks,3. 250-500,58,50,12886.0
+computers.notebook,1. under 100,309,195,3944.0
+computers.notebook,2. 100-250,1813,907,205771.0
+computers.notebook,3. 250-500,16792,10376,3533560.0
+computers.notebook,4. 500-1000,13477,9340,6724955.0
+computers.notebook,5. 1000+,5730,4121,6184655.0
+computers.peripherals.camera,1. under 100,98,73,1735.0
+computers.peripherals.camera,2. 100-250,38,30,4557.0
+computers.peripherals.camera,3. 250-500,2,2,800.0
+computers.peripherals.camera,4. 500-1000,1,1,710.0
+computers.peripherals.keyboard,1. under 100,1647,1152,33631.0
+computers.peripherals.keyboard,2. 100-250,233,169,22529.0
+computers.peripherals.keyboard,3. 250-500,22,19,5667.0
+computers.peripherals.monitor,1. under 100,375,249,20669.0
+computers.peripherals.monitor,2. 100-250,2218,1578,262656.0
+computers.peripherals.monitor,3. 250-500,1109,799,269817.0
+computers.peripherals.monitor,4. 500-1000,139,91,60109.0
+computers.peripherals.monitor,5. 1000+,15,13,17498.0
+computers.peripherals.mouse,1. under 100,3175,2201,45414.0
+computers.peripherals.mouse,2. 100-250,184,124,15670.0
+computers.peripherals.mouse,3. 250-500,2,2,510.0
+computers.peripherals.printer,1. under 100,375,265,20198.0
+computers.peripherals.printer,2. 100-250,4133,2590,413975.0
+computers.peripherals.printer,3. 250-500,1176,796,228960.0
+computers.peripherals.printer,4. 500-1000,238,164,111147.0
+computers.peripherals.printer,5. 1000+,27,20,30938.0
+construction.components.faucet,1. under 100,711,475,18638.0
+construction.components.faucet,2. 100-250,106,66,9789.0
+construction.components.faucet,3. 250-500,15,11,3536.0
+construction.components.faucet,4. 500-1000,2,0,0.0
+construction.components.faucet,5. 1000+,1,1,1672.0
+construction.tools.drill,1. under 100,5454,3731,191636.0
+construction.tools.drill,2. 100-250,2165,1527,219738.0
+construction.tools.drill,3. 250-500,314,246,91049.0
+construction.tools.drill,4. 500-1000,101,79,45646.0
+construction.tools.drill,5. 1000+,2,2,3044.0
+construction.tools.generator,1. under 100,1014,650,41365.0
+construction.tools.generator,2. 100-250,2019,1349,192978.0
+construction.tools.generator,3. 250-500,524,373,129316.0
+construction.tools.generator,4. 500-1000,262,184,113939.0
+construction.tools.generator,5. 1000+,26,21,29396.0
+construction.tools.light,1. under 100,321,257,5486.0
+construction.tools.light,2. 100-250,16,12,1544.0
+construction.tools.painting,1. under 100,254,189,8252.0
+construction.tools.painting,2. 100-250,38,26,3374.0
+construction.tools.painting,3. 250-500,1,1,328.0
+construction.tools.painting,4. 500-1000,19,13,7476.0
+construction.tools.pump,1. under 100,464,321,17148.0
+construction.tools.pump,2. 100-250,391,264,32392.0
+construction.tools.pump,3. 250-500,11,8,2743.0
+construction.tools.pump,4. 500-1000,2,2,1141.0
+construction.tools.pump,5. 1000+,1,1,1430.0
+construction.tools.saw,1. under 100,2434,1579,121683.0
+construction.tools.saw,2. 100-250,1364,953,163607.0
+construction.tools.saw,3. 250-500,271,188,67823.0
+construction.tools.saw,4. 500-1000,173,120,85315.0
+construction.tools.saw,5. 1000+,26,21,26745.0
+construction.tools.screw,1. under 100,1,0,0.0
+construction.tools.soldering,1. under 100,26,22,300.0
+construction.tools.welding,1. under 100,1285,894,65806.0
+construction.tools.welding,2. 100-250,1412,1014,143277.0
+construction.tools.welding,3. 250-500,416,328,112270.0
+construction.tools.welding,4. 500-1000,99,90,58652.0
+construction.tools.welding,5. 1000+,15,12,14341.0
+country_yard.cultivator,2. 100-250,13,10,1784.0
+country_yard.cultivator,3. 250-500,80,71,23634.0
+country_yard.cultivator,4. 500-1000,2,0,0.0
+country_yard.furniture.hammok,1. under 100,12,8,193.0
+country_yard.furniture.hammok,2. 100-250,2,2,456.0
+country_yard.lawn_mower,1. under 100,60,44,3871.0
+country_yard.lawn_mower,2. 100-250,37,25,3795.0
+country_yard.lawn_mower,3. 250-500,12,8,2945.0
+country_yard.lawn_mower,4. 500-1000,3,2,1210.0
+electronics.audio.acoustic,1. under 100,401,242,16420.0
+electronics.audio.acoustic,2. 100-250,1538,1020,157546.0
+electronics.audio.acoustic,3. 250-500,382,289,95646.0
+electronics.audio.acoustic,4. 500-1000,145,91,55839.0
+electronics.audio.acoustic,5. 1000+,64,45,70632.0
+electronics.audio.headphone,1. under 100,26223,17201,544067.0
+electronics.audio.headphone,2. 100-250,50901,31178,5060283.0
+electronics.audio.headphone,3. 250-500,6093,3971,1392606.0
+electronics.audio.headphone,4. 500-1000,14,11,7522.0
+electronics.audio.microphone,1. under 100,794,540,14432.0
+electronics.audio.microphone,2. 100-250,260,173,26519.0
+electronics.audio.microphone,3. 250-500,36,25,7994.0
+electronics.audio.microphone,4. 500-1000,18,13,8300.0
+electronics.audio.microphone,5. 1000+,9,6,8562.0
+electronics.audio.music_tools.piano,1. under 100,436,266,18979.0
+electronics.audio.music_tools.piano,2. 100-250,754,482,85202.0
+electronics.audio.music_tools.piano,3. 250-500,191,134,48809.0
+electronics.audio.music_tools.piano,4. 500-1000,72,61,42782.0
+electronics.audio.music_tools.piano,5. 1000+,29,24,42198.0
+electronics.audio.subwoofer,1. under 100,3690,2593,137425.0
+electronics.audio.subwoofer,2. 100-250,2487,1468,210642.0
+electronics.audio.subwoofer,3. 250-500,103,64,20377.0
+electronics.audio.subwoofer,4. 500-1000,5,5,2739.0
+electronics.audio.subwoofer,5. 1000+,3,2,3753.0
+electronics.camera.photo,2. 100-250,149,110,19171.0
+electronics.camera.photo,3. 250-500,118,75,26700.0
+electronics.camera.photo,4. 500-1000,153,107,76395.0
+electronics.camera.photo,5. 1000+,85,65,105341.0
+electronics.camera.video,1. under 100,92,67,4483.0
+electronics.camera.video,2. 100-250,226,168,30100.0
+electronics.camera.video,3. 250-500,461,327,130840.0
+electronics.camera.video,4. 500-1000,241,177,106165.0
+electronics.camera.video,5. 1000+,46,32,42257.0
+electronics.clocks,1. under 100,12433,7788,405382.0
+electronics.clocks,2. 100-250,8015,5142,838754.0
+electronics.clocks,3. 250-500,18091,11143,3957822.0
+electronics.clocks,4. 500-1000,7086,4505,2554097.0
+electronics.clocks,5. 1000+,619,442,646896.0
+electronics.smartphone,1. under 100,18084,10492,908777.0
+electronics.smartphone,2. 100-250,285191,155488,27513459.0
+electronics.smartphone,3. 250-500,133920,79239,26977999.0
+electronics.smartphone,4. 500-1000,159897,96828,78541458.0
+electronics.smartphone,5. 1000+,74049,43474,58870413.0
+electronics.tablet,1. under 100,1642,985,66858.0
+electronics.tablet,2. 100-250,7699,4735,726455.0
+electronics.tablet,3. 250-500,2228,1577,620934.0
+electronics.tablet,4. 500-1000,1363,999,690979.0
+electronics.tablet,5. 1000+,564,404,510285.0
+electronics.telephone,1. under 100,8923,5577,197924.0
+electronics.telephone,2. 100-250,210,122,12498.0
+electronics.video.projector,1. under 100,12,10,692.0
+electronics.video.projector,2. 100-250,3,2,264.0
+electronics.video.projector,3. 250-500,179,134,55312.0
+electronics.video.projector,4. 500-1000,104,79,62566.0
+electronics.video.projector,5. 1000+,23,19,30358.0
+electronics.video.tv,1. under 100,79,53,5161.0
+electronics.video.tv,2. 100-250,16957,10495,1865440.0
+electronics.video.tv,3. 250-500,28244,17671,6754541.0
+electronics.video.tv,4. 500-1000,15809,10426,6597221.0
+electronics.video.tv,5. 1000+,2426,1625,2383646.0
+furniture.bathroom.bath,1. under 100,122,96,8053.0
+furniture.bathroom.bath,2. 100-250,196,124,16654.0
+furniture.bathroom.bath,3. 250-500,52,42,12704.0
+furniture.bathroom.bath,4. 500-1000,6,5,3191.0
+furniture.bathroom.toilet,1. under 100,461,346,22403.0
+furniture.bathroom.toilet,2. 100-250,125,90,13476.0
+furniture.bathroom.toilet,3. 250-500,9,5,1551.0
+furniture.bathroom.toilet,4. 500-1000,1,0,0.0
+furniture.bathroom.toilet,5. 1000+,1,1,1296.0
+furniture.bedroom.bed,1. under 100,978,685,50425.0
+furniture.bedroom.bed,2. 100-250,4509,3129,495810.0
+furniture.bedroom.bed,3. 250-500,1075,771,259085.0
+furniture.bedroom.bed,4. 500-1000,240,161,101879.0
+furniture.bedroom.bed,5. 1000+,7,6,9668.0
+furniture.bedroom.blanket,1. under 100,449,299,11071.0
+furniture.bedroom.blanket,2. 100-250,8,5,768.0
+furniture.bedroom.pillow,1. under 100,579,458,10137.0
+furniture.bedroom.pillow,2. 100-250,19,15,1805.0
+furniture.bedroom.pillow,3. 250-500,2,1,313.0
+furniture.kitchen.chair,1. under 100,3029,2134,87502.0
+furniture.kitchen.chair,2. 100-250,725,451,63737.0
+furniture.kitchen.chair,3. 250-500,186,134,40164.0
+furniture.kitchen.chair,4. 500-1000,4,4,2131.0
+furniture.kitchen.table,1. under 100,968,690,50205.0
+furniture.kitchen.table,2. 100-250,1614,1079,155530.0
+furniture.kitchen.table,3. 250-500,234,165,54632.0
+furniture.kitchen.table,4. 500-1000,63,44,32363.0
+furniture.kitchen.table,5. 1000+,40,28,36493.0
+furniture.living_room.cabinet,1. under 100,249,170,12694.0
+furniture.living_room.cabinet,2. 100-250,3694,2617,472101.0
+furniture.living_room.cabinet,3. 250-500,1824,1288,476446.0
+furniture.living_room.cabinet,4. 500-1000,275,211,123107.0
+furniture.living_room.cabinet,5. 1000+,19,12,18692.0
+furniture.living_room.chair,1. under 100,679,454,27285.0
+furniture.living_room.chair,2. 100-250,477,315,49617.0
+furniture.living_room.chair,3. 250-500,147,95,31366.0
+furniture.living_room.chair,4. 500-1000,4,2,1120.0
+furniture.living_room.chair,5. 1000+,4,2,2980.0
+furniture.living_room.sofa,2. 100-250,27,18,3735.0
+furniture.living_room.sofa,3. 250-500,2147,1564,630960.0
+furniture.living_room.sofa,4. 500-1000,1916,1467,987195.0
+furniture.living_room.sofa,5. 1000+,259,192,252195.0
+furniture.universal.light,1. under 100,87,61,2440.0
+furniture.universal.light,2. 100-250,1,1,187.0
+furniture.universal.light,3. 250-500,25,22,6791.0
+furniture.universal.light,4. 500-1000,8,7,3874.0
+furniture.universal.light,5. 1000+,1,1,1127.0
+kids.carriage,1. under 100,1877,1214,92637.0
+kids.carriage,2. 100-250,2513,1571,212071.0
+kids.carriage,3. 250-500,678,449,171557.0
+kids.carriage,4. 500-1000,217,156,98883.0
+kids.carriage,5. 1000+,45,33,50915.0
+kids.dolls,1. under 100,1105,811,32527.0
+kids.dolls,2. 100-250,22,18,2305.0
+kids.fmcg.diapers,1. under 100,1659,1056,13383.0
+kids.skates,1. under 100,253,173,7042.0
+kids.skates,2. 100-250,85,70,9737.0
+kids.skates,3. 250-500,472,352,124385.0
+kids.skates,4. 500-1000,166,126,79244.0
+kids.skates,5. 1000+,22,19,41194.0
+kids.swing,1. under 100,663,419,29735.0
+kids.swing,2. 100-250,202,124,22394.0
+kids.swing,3. 250-500,107,82,26681.0
+kids.swing,4. 500-1000,7,4,2389.0
+kids.toys,1. under 100,3320,2334,68284.0
+kids.toys,2. 100-250,28,18,2140.0
+kids.toys,3. 250-500,1,1,266.0
+medicine.tools.tonometer,1. under 100,795,513,24060.0
+medicine.tools.tonometer,2. 100-250,2,0,0.0
+medicine.tools.tonometer,3. 250-500,1,1,289.0
+sport.bicycle,1. under 100,242,170,12556.0
+sport.bicycle,2. 100-250,724,501,81096.0
+sport.bicycle,3. 250-500,185,139,52251.0
+sport.bicycle,4. 500-1000,233,161,107534.0
+sport.bicycle,5. 1000+,64,53,101812.0
+sport.ski,1. under 100,27,22,1268.0
+sport.ski,2. 100-250,53,36,5973.0
+sport.ski,3. 250-500,87,60,20526.0
+sport.ski,4. 500-1000,9,6,4006.0
+sport.snowboard,1. under 100,23,20,1322.0
+sport.snowboard,2. 100-250,122,77,13451.0
+sport.snowboard,3. 250-500,136,89,28938.0
+sport.snowboard,4. 500-1000,10,8,4878.0
+sport.tennis,1. under 100,91,60,2462.0
+sport.tennis,2. 100-250,13,10,1626.0
+sport.trainer,1. under 100,51,27,1711.0
+sport.trainer,2. 100-250,998,669,109039.0
+sport.trainer,3. 250-500,513,379,131478.0
+sport.trainer,4. 500-1000,114,85,51438.0
+sport.trainer,5. 1000+,62,51,65492.0
+stationery.cartrige,1. under 100,422,308,5546.0
+stationery.cartrige,2. 100-250,1,1,120.0
