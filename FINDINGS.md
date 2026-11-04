@@ -14,3 +14,9 @@
 - 500-1000 band is the top target: 40.7% of revenue at risk, lowest cart->purchase among high-value bands (39.4%)
 - Caveat: revenue at risk is an upper bound (uses max item price per session; some carts convert later)
 - Your new finding here
+
+## A/B test design (simulated, not a real result)
+- Target: 233,946 carted smartphone sessions priced 500+, baseline cart->purchase 40.03%
+- Needed sample for a +2pt lift at 80% power: 9,494 per group (18,988 total)
+- Simulation check: 78.8% power at +2pt lift, 5.1% false positives with no effect
+- The lift in the simulation is assumed, so this demonstrates the method, not that a financing prompt works
