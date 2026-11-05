@@ -13,7 +13,7 @@ apparel.costume,1. under 100,1508,1036,66012.0
 apparel.costume,2. 100-250,471,338,51017.0
 apparel.costume,3. 250-500,74,56,20059.0
 apparel.costume,4. 500-1000,11,9,4707.0
-apparel.dress,1. under 100,345,269,12152.0
+apparel.dress,1. under 100,345,269,12151.0
 apparel.dress,2. 100-250,11,10,1164.0
 apparel.dress,3. 250-500,1,1,350.0
 apparel.dress,4. 500-1000,3,3,2015.0
@@ -320,7 +320,7 @@ electronics.audio.music_tools.piano,4. 500-1000,72,61,42782.0
 electronics.audio.music_tools.piano,5. 1000+,29,24,42198.0
 electronics.audio.subwoofer,1. under 100,3690,2593,137425.0
 electronics.audio.subwoofer,2. 100-250,2487,1468,210642.0
-electronics.audio.subwoofer,3. 250-500,103,64,20377.0
+electronics.audio.subwoofer,3. 250-500,103,64,20378.0
 electronics.audio.subwoofer,4. 500-1000,5,5,2739.0
 electronics.audio.subwoofer,5. 1000+,3,2,3753.0
 electronics.camera.photo,2. 100-250,149,110,19171.0

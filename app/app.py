@@ -52,11 +52,15 @@ def style(fig, height=380):
     return fig
 
 
-funnel = load("funnel").iloc[0]
+clean = st.sidebar.toggle("Exclude 14-17 Nov (suspected data problem)", value=True)
+st.sidebar.caption("The log looks broken on these days: almost no purchases on 15 Nov, and carts and traffic far above normal.")
+sfx = "_clean" if clean else ""
+
+funnel = load("funnel" + sfx).iloc[0]
 daily = load("daily")
-cats = load("categories")
-subs = load("subcategories")
-bands = load("price_bands")
+cats = load("categories" + sfx)
+subs = load("subcategories" + sfx)
+bands = load("price_bands" + sfx)
 
 total = funnel["total_sessions"]
 viewed = funnel["viewed"]
@@ -82,7 +86,9 @@ st.write(
     "that never check out. One month of real event data, analysed at session level."
 )
 
-tab1, tab2, tab3, tab4 = st.tabs(["Overview", "Categories", "Price and revenue", "A/B test planner"])
+tab1, tab2, tab3, tab_back, tab4 = st.tabs(
+    ["Overview", "Categories", "Price and revenue", "Do carts come back?", "A/B test planner"]
+)
 
 # ------------------------------------------------------------------ Overview
 with tab1:
@@ -124,6 +130,11 @@ with tab1:
                           line=dict(color=RISK, dash="dash", width=1.5))
             fig.add_annotation(x=bf, y=1.0, yref="paper", text="Black Friday", showarrow=False,
                                xanchor="right", font=dict(color=RISK))
+        fig.add_shape(type="rect", x0=pd.Timestamp("2019-11-13 12:00"), x1=pd.Timestamp("2019-11-17 12:00"),
+                      y0=0, y1=1, yref="paper", fillcolor=RISK, opacity=0.08, line_width=0, layer="below")
+        fig.add_annotation(x=pd.Timestamp("2019-11-15 12:00"), y=1.0, yref="paper",
+                           text="Suspected data problem", showarrow=False, yanchor="bottom",
+                           font=dict(color=RISK))
         fig.update_yaxes(tickformat=".1%", secondary_y=False, title_text="Purchase rate")
         fig.update_yaxes(secondary_y=True, title_text="Sessions", showgrid=False)
         fig.update_layout(title="Daily purchase rate and traffic")
@@ -213,7 +224,7 @@ with tab4:
     hb = bands[(bands["category_code"] == code) & (bands["price_band"].isin(HIGH_BANDS))]
     seg_carts = hb["carted_sessions"].sum()
     seg_base = 1 - hb["abandoned_sessions"].sum() / seg_carts if seg_carts > 0 else 0.40
-    seg_daily = max(100, int(round(seg_carts / 30))) if seg_carts > 0 else 1000
+    seg_daily = max(100, int(round(seg_carts / (26 if clean else 30)))) if seg_carts > 0 else 1000
 
     a, b_, c = st.columns(3)
     base = a.number_input("Baseline cart to purchase rate (%)", 1.0, 95.0, float(round(100 * seg_base, 1)), 0.5) / 100
@@ -255,3 +266,74 @@ with tab4:
             "Runs at least 7 days to cover weekday and weekend behaviour. "
             "The extra-purchases figure assumes the lift is real; it is an illustration, not a result."
         )
+
+# ------------------------------------------------------------ Do carts come back?
+with tab_back:
+    st.subheader("Do abandoned carts come back?")
+    st.write(
+        "For each abandoned cart: did the same shopper buy later, in another session? "
+        "Measured from the last cart action, using the most expensive item in the cart."
+    )
+    if not (AGG / "recovery.csv").exists():
+        st.info("Run `python build_recovery.py` to add this analysis.")
+    else:
+        rec = load("recovery")
+        names = sorted(rec["category_code"].unique())
+        start = names.index("electronics.smartphone") + 1 if "electronics.smartphone" in names else 0
+        pick = st.selectbox("Category of the most expensive item", ["All categories"] + names, index=start, key="rec_cat")
+        size_pick = st.radio("Price of that item", ["All prices", "Under 500", "500 or more"], horizontal=True, key="rec_price")
+
+        base_rec = rec if pick == "All categories" else rec[rec["category_code"] == pick]
+        if size_pick == "Under 500":
+            r = base_rec[~base_rec["price_band"].isin(HIGH_BANDS)]
+        elif size_pick == "500 or more":
+            r = base_rec[base_rec["price_band"].isin(HIGH_BANDS)]
+        else:
+            r = base_rec
+
+        tot_n = r["abandoned"].sum()
+        tot_v = r["value"].sum()
+        if tot_n < 200 or tot_v <= 0:
+            st.info("Too few abandoned carts in this selection for a reliable answer.")
+        else:
+            p7 = r["n_prod_7d"].sum() / tot_n
+            c7 = r["n_cat_7d"].sum() / tot_n
+            lost = 1 - r["v_cat_7d"].sum() / tot_v
+
+            k1, k2, k3, k4 = st.columns(4)
+            k1.metric("Abandoned carts in sample", n(tot_n))
+            k2.metric("Bought the same product within 7 days", f"{p7:.1%}")
+            k3.metric("Bought in the same category within 7 days", f"{c7:.1%}")
+            k4.metric("Cart value that looks lost", f"{lost:.0%}")
+
+            labels = ["1 hour", "6 hours", "1 day", "3 days", "7 days"]
+            keys = ["1h", "6h", "1d", "3d", "7d"]
+            fig = go.Figure()
+            for tier, name, color in [("prod", "Same product", RISK), ("cat", "Same category", TEAL), ("any", "Any purchase", SLATE)]:
+                fig.add_trace(go.Scatter(
+                    x=labels, y=[r[f"n_{tier}_{k}"].sum() / tot_n for k in keys],
+                    mode="lines+markers", name=name, line=dict(color=color, width=3)))
+            fig.update_yaxes(tickformat=".0%", title_text="Share of abandoned carts")
+            fig.update_xaxes(title_text="Time after the last cart action")
+            fig.update_layout(title="How fast shoppers come back")
+            st.plotly_chart(style(fig), width="stretch")
+
+            g = base_rec.groupby("price_band")[["value", "v_cat_7d"]].sum().reindex(BAND_ORDER).fillna(0)
+            g = g[g["value"] > 0]
+            if len(g) > 0:
+                share = g["v_cat_7d"] / g["value"]
+                fig = go.Figure(go.Bar(
+                    x=[s_.split(". ", 1)[1] for s_ in g.index], y=share, marker_color=TEAL,
+                    text=[f"{v:.0%}" for v in share], textposition="outside"))
+                fig.update_yaxes(tickformat=".0%", title_text="Cart value recovered", range=[0, max(0.1, float(share.max()) * 1.25)])
+                fig.update_xaxes(title_text="Price of the most expensive item")
+                fig.update_layout(title="Cart value recovered within 7 days, same category")
+                st.plotly_chart(style(fig, 340), width="stretch")
+
+            st.caption(
+                "Sample: carts abandoned 1-6 Nov and 18-23 Nov, so every cart has a full 7-day follow-up that avoids the "
+                "suspect days. Carts whose most expensive item has no category are left out. Shoppers can only be "
+                "followed under the same user ID, so a purchase on another device or account looks like a lost cart. "
+                "Purchases within the first hour are often the same visit split into two sessions, not a true return. "
+                "This shows what happened, not that any reminder would make shoppers come back."
+            )

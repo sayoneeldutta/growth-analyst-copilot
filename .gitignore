@@ -1,3 +1,4 @@
 data/
 *.parquet
 *.db
+__pycache__/

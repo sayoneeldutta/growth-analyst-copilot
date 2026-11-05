@@ -5,6 +5,12 @@ SRC = "data/nov.parquet"
 OUT = "app/aggregates"
 MIN_VIEWED = 5000  # ignore tiny categories so charts stay readable
 
+# Suspected data problem (see daily.csv): purchases almost missing on 15 Nov,
+# carts and traffic inflated 14-17 Nov. Every table is built twice:
+# once with all days, once without this window (files ending in _clean).
+BAD_FROM, BAD_TO = "2019-11-14", "2019-11-17"
+VARIANTS = [("", "TRUE"), ("_clean", f"day NOT BETWEEN '{BAD_FROM}' AND '{BAD_TO}'")]
+
 os.makedirs(OUT, exist_ok=True)
 os.makedirs("data/tmp", exist_ok=True)
 
@@ -37,6 +43,7 @@ print("2/3 Building session-by-category table...")
 con.sql(f"""
 COPY (
   SELECT user_session, category_code,
+         MIN(LEFT(CAST(event_time AS VARCHAR), 10)) AS day,
          MAX((event_type = 'view')::INT)     AS viewed,
          MAX((event_type = 'cart')::INT)     AS carted,
          MAX((event_type = 'purchase')::INT) AS purchased,
@@ -48,15 +55,6 @@ COPY (
 """)
 
 print("3/3 Writing dashboard files to app/aggregates ...")
-
-save("funnel", """
-  SELECT COUNT(*)                        AS total_sessions,
-         SUM(viewed)                     AS viewed,
-         SUM(viewed * carted)            AS carted,
-         SUM(viewed * carted * purchased) AS bought_after_cart,
-         SUM(purchased)                  AS any_purchase
-  FROM 'data/sessions.parquet'
-""")
 
 save("daily", """
   SELECT day,
@@ -76,47 +74,60 @@ METRICS = """
   ROUND(COALESCE(SUM(viewed * carted * (1 - purchased) * cart_price), 0)) AS revenue_at_risk
 """
 
-save("categories", f"""
-  WITH t AS (
-    SELECT user_session, split_part(category_code, '.', 1) AS category,
-           MAX(viewed) AS viewed, MAX(carted) AS carted,
-           MAX(purchased) AS purchased, MAX(cart_price) AS cart_price
-    FROM 'data/session_category.parquet'
-    GROUP BY 1, 2
-  )
-  SELECT category, {METRICS}
-  FROM t GROUP BY 1
-  HAVING SUM(viewed) >= {MIN_VIEWED}
-  ORDER BY 2 DESC
-""")
+for sfx, keep in VARIANTS:
+    save(f"funnel{sfx}", f"""
+      SELECT COUNT(*)                         AS total_sessions,
+             SUM(viewed)                      AS viewed,
+             SUM(viewed * carted)             AS carted,
+             SUM(viewed * carted * purchased) AS bought_after_cart,
+             SUM(purchased)                   AS any_purchase
+      FROM 'data/sessions.parquet'
+      WHERE {keep}
+    """)
 
-save("subcategories", f"""
-  SELECT split_part(category_code, '.', 1) AS category, category_code, {METRICS}
-  FROM 'data/session_category.parquet'
-  GROUP BY 1, 2
-  HAVING SUM(viewed) >= {MIN_VIEWED}
-  ORDER BY 3 DESC
-""")
+    save(f"categories{sfx}", f"""
+      WITH t AS (
+        SELECT user_session, split_part(category_code, '.', 1) AS category,
+               MAX(viewed) AS viewed, MAX(carted) AS carted,
+               MAX(purchased) AS purchased, MAX(cart_price) AS cart_price
+        FROM 'data/session_category.parquet'
+        WHERE {keep}
+        GROUP BY 1, 2
+      )
+      SELECT category, {METRICS}
+      FROM t GROUP BY 1
+      HAVING SUM(viewed) >= {MIN_VIEWED}
+      ORDER BY 2 DESC
+    """)
 
-save("price_bands", """
-  WITH b AS (
-    SELECT category_code, purchased, cart_price,
-           CASE WHEN cart_price < 100  THEN '1. under 100'
-                WHEN cart_price < 250  THEN '2. 100-250'
-                WHEN cart_price < 500  THEN '3. 250-500'
-                WHEN cart_price < 1000 THEN '4. 500-1000'
-                ELSE '5. 1000+' END AS price_band
-    FROM 'data/session_category.parquet'
-    WHERE carted = 1 AND cart_price IS NOT NULL
-  )
-  SELECT category_code, price_band,
-         COUNT(*)                                  AS carted_sessions,
-         SUM(1 - purchased)                        AS abandoned_sessions,
-         ROUND(SUM((1 - purchased) * cart_price))  AS revenue_at_risk
-  FROM b
-  GROUP BY 1, 2
-  ORDER BY 1, 2
-""")
+    save(f"subcategories{sfx}", f"""
+      SELECT split_part(category_code, '.', 1) AS category, category_code, {METRICS}
+      FROM 'data/session_category.parquet'
+      WHERE {keep}
+      GROUP BY 1, 2
+      HAVING SUM(viewed) >= {MIN_VIEWED}
+      ORDER BY 3 DESC
+    """)
 
-print("Done. Headline numbers for a sanity check:")
-print(con.sql(f"SELECT * FROM '{OUT}/funnel.csv'"))
+    save(f"price_bands{sfx}", f"""
+      WITH b AS (
+        SELECT category_code, purchased, cart_price,
+               CASE WHEN cart_price < 100  THEN '1. under 100'
+                    WHEN cart_price < 250  THEN '2. 100-250'
+                    WHEN cart_price < 500  THEN '3. 250-500'
+                    WHEN cart_price < 1000 THEN '4. 500-1000'
+                    ELSE '5. 1000+' END AS price_band
+        FROM 'data/session_category.parquet'
+        WHERE carted = 1 AND cart_price IS NOT NULL AND {keep}
+      )
+      SELECT category_code, price_band,
+             COUNT(*)                                  AS carted_sessions,
+             SUM(1 - purchased)                        AS abandoned_sessions,
+             ROUND(SUM((1 - purchased) * cart_price))  AS revenue_at_risk
+      FROM b
+      GROUP BY 1, 2
+      ORDER BY 1, 2
+    """)
+
+print("Done. Headline numbers (all days, then without 14-17 Nov):")
+print(con.sql(f"SELECT 'all' AS version, * FROM '{OUT}/funnel.csv' UNION ALL SELECT 'clean', * FROM '{OUT}/funnel_clean.csv'"))
