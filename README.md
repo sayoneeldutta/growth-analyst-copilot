@@ -1,5 +1,7 @@
 # Growth Analyst Copilot
 
+**Live dashboard:** https://growth-analyst-copilot-rbgtffobapdvnnmzqdm29m.streamlit.app/
+
 Where does an online store lose shoppers between viewing and buying, and how much money sits in the carts that never check out? This project answers that with session-level analysis of one month of real e-commerce event data (67.5M events, 13.8M sessions), an interactive Streamlit dashboard, and an A/B test design for the biggest opportunity.
 
 ![Overview](docs/overview.png)
