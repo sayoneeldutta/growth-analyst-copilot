@@ -1,22 +1,31 @@
-# Findings: Nov 2019 e-commerce funnel
+# Findings: November 2019 e-commerce funnel
+
+Numbers use normal days (14-17 Nov excluded) unless stated. Revenue is in the dataset's own price units.
 
 ## Funnel
-- Session conversion: 5.6% overall; 12.6% view->cart, 37.2% cart->purchase
-- ~1.09M carted sessions ended without a purchase
+- 10.5M sessions; 5.2% end in a purchase
+- 47.6% of carted sessions end in a purchase; about 491K carts abandoned
 
-## Where the abandonment is
-- Electronics has the best cart->purchase rate (41%) but the most abandoned carts by volume
-- Smartphones alone: ~383K abandoned cart sessions (57% of carted)
-- Smartphone cart->purchase is fairly flat across price bands (39-45%), so price alone doesn't explain abandonment
+## Data problem, 14-17 Nov
+- 15 Nov: 255,279 carted sessions and exactly 1 purchase (a normal day has about 20,000)
+- Carts run at 2 to 5 times normal on 14-17 Nov; purchases are 2.7 and 7 times normal on 16-17 Nov
+- These four days hold 24% of sessions, 46% of carted sessions and 55% of abandoned carts
+- With them included: cart-to-purchase 37.2%, abandoned carts 1.09M, sessions with a purchase 5.6%
+- Cause unknown (tracking fault, bot traffic or a real event). Excluded by default; the dashboard has a toggle
 
-## Revenue impact
-- 500+ smartphone bands = 36% of abandoned carts but ~71% of revenue at risk (~$137M of ~$193M)
-- 500-1000 band is the top target: 40.7% of revenue at risk, lowest cart->purchase among high-value bands (39.4%)
-- Caveat: revenue at risk is an upper bound (uses max item price per session; some carts convert later)
-- Your new finding here
+## Where the money is (smartphones)
+- Carts priced 500+ are 31% of abandoned carts but 67% of the revenue at risk (about 49M of 74M)
+- With all days included the split was 36% and 71%, so the finding holds
+- Cart-to-purchase is 54-58% for every band from 100 up, so price alone does not explain abandonment
+- The 500-1000 band holds the most revenue at risk (27.4M); 1000+ holds 21.9M
+- Caveat: revenue at risk is an upper bound (most expensive item per cart; some shoppers return)
+
+## Do abandoned carts come back? (smartphones priced 500+, 19,192 carts)
+- 11.5% of shoppers bought the same phone within 7 days; 21% bought any phone
+- About 79% of cart value shows no repeat purchase in the category within 7 days
+- Caveats: followed by user ID only; first-hour returns may be split visits; cheaper later purchases are credited at the full cart price
 
 ## A/B test design (simulated, not a real result)
-- Target: 233,946 carted smartphone sessions priced 500+, baseline cart->purchase 40.03%
-- Needed sample for a +2pt lift at 80% power: 9,494 per group (18,988 total)
-- Simulation check: 78.8% power at +2pt lift, 5.1% false positives with no effect
-- The lift in the simulation is assumed, so this demonstrates the method, not that a financing prompt works
+- Segment: smartphone carts priced 500+, 116,990 sessions over 26 normal days (about 4,500 a day), baseline cart-to-purchase 56.9%
+- For a +2 point lift at 80% power: about 9,600 sessions per group, run at least 7 days
+- The lift in the simulation is assumed, so this demonstrates the method, not that any intervention works

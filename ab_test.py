@@ -5,23 +5,15 @@ from statsmodels.stats.proportion import (
     proportion_effectsize, proportions_ztest, confint_proportions_2indep
 )
 
-# 1. Baseline from the real data
+# 1. Baseline from the real data (normal days only: 14-17 Nov excluded)
 con = duckdb.connect()
 con.sql("SET memory_limit='4GB'")
 carted_sessions, baseline = con.sql("""
-    WITH s AS (
-      SELECT
-        user_session,
-        MAX(CASE WHEN event_type = 'cart' THEN price END) AS max_cart_price,
-        MAX((event_type = 'cart')::INT)     AS carted,
-        MAX((event_type = 'purchase')::INT) AS purchased
-      FROM 'data/nov.parquet'
-      WHERE category_code = 'electronics.smartphone' AND price > 0
-      GROUP BY 1
-    )
     SELECT COUNT(*), AVG(purchased)
-    FROM s
-    WHERE carted = 1 AND max_cart_price >= 500
+    FROM 'data/session_category.parquet'
+    WHERE category_code = 'electronics.smartphone'
+      AND carted = 1 AND cart_price >= 500
+      AND day NOT BETWEEN '2019-11-14' AND '2019-11-17'
 """).fetchall()[0]
 print(f"Target population: {carted_sessions:,} carted sessions, baseline cart->purchase = {baseline:.2%}")
 
